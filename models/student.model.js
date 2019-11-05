@@ -2,9 +2,18 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 var studentSchema = new  mongoose.Schema({
-    fullName:{
+    firstName:{
         type: String,
-        required: "Full Name can't be empty"
+        required: "First Name can't be empty"
+    },
+    lastName: {
+        type: String,
+        required: "Last Name cannot be empty"
+    },
+    studentid: {
+        type: String,
+        required: "Student id can't be empty",
+        unique: true
     },
     email: {
         type: String,
